@@ -1,0 +1,9 @@
+# Render-repo .gitignore — used ONLY when staging a run to the shared cloud
+# render repo (emotionmedialab/video-renderer). Unlike the template's own
+# .gitignore, the MEDIA must be committed so the CI runner can render it.
+# When staging (Stage 7), copy this over the run's .gitignore:
+#     cp render.gitignore .gitignore
+node_modules/
+out/
+comp-frames.json
+*.log

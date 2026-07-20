@@ -1,0 +1,98 @@
+[
+  {
+    "index": 0,
+    "sectionIndex": 0,
+    "section": "The First Pill",
+    "text": "Zero oral PCSK9 inhibitors existed until this week.",
+    "cue": {
+      "type": "stat",
+      "raw": "0 | oral PCSK9 inhibitors — until this week",
+      "value": "0",
+      "label": "oral PCSK9 inhibitors — until this week"
+    }
+  },
+  {
+    "index": 1,
+    "sectionIndex": 0,
+    "section": "The First Pill",
+    "text": "The FDA just approved Merck's once-daily pill, the first oral version of a class defined by injectable monoclonal antibodies.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"first oral version\"",
+      "phrase": "first oral version"
+    }
+  },
+  {
+    "index": 2,
+    "sectionIndex": 1,
+    "section": "The Adherence Wall",
+    "text": "The problem those injectables never solved was adherence, needles, biweekly dosing, specialty pharmacy friction.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"adherence\"",
+      "phrase": "adherence"
+    }
+  },
+  {
+    "index": 3,
+    "sectionIndex": 1,
+    "section": "The Adherence Wall",
+    "text": "A daily pill routes through standard retail pharmacy.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"standard retail pharmacy\"",
+      "phrase": "standard retail pharmacy"
+    }
+  },
+  {
+    "index": 4,
+    "sectionIndex": 2,
+    "section": "The Race Shifts",
+    "text": "AstraZeneca was in the same race. Now they trail.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"Now they trail\"",
+      "phrase": "Now they trail"
+    }
+  },
+  {
+    "index": 5,
+    "sectionIndex": 3,
+    "section": "The Real Signal",
+    "text": "The real signal is bigger than cholesterol.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"bigger than cholesterol\"",
+      "phrase": "bigger than cholesterol"
+    }
+  },
+  {
+    "index": 6,
+    "sectionIndex": 3,
+    "section": "The Real Signal",
+    "text": "If a monoclonal antibody mechanism can be reformulated into an FDA-approved pill, every injectable biologic in chronic care becomes an oral disruption target.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"oral disruption target\"",
+      "phrase": "oral disruption target"
+    }
+  },
+  {
+    "index": 7,
+    "sectionIndex": 4,
+    "section": "In This Week's Brief",
+    "text": "The full read on what this means for GLP-1s, IL-17, and Merck's cardio franchise is in this week's BioIntel brief.",
+    "cue": {
+      "type": "emphasize",
+      "raw": "\"BioIntel brief\"",
+      "phrase": "BioIntel brief"
+    }
+  },
+  {
+    "index": 8,
+    "sectionIndex": 4,
+    "section": "In This Week's Brief",
+    "text": "Subscribe free. Signal over noise.",
+    "cue": null
+  }
+]

@@ -1,0 +1,567 @@
+[
+  {
+    "text": "Zero",
+    "start": 50,
+    "end": 450
+  },
+  {
+    "text": "oral",
+    "start": 450,
+    "end": 900
+  },
+  {
+    "text": "PCSK9",
+    "start": 900,
+    "end": 1670
+  },
+  {
+    "text": "inhibitors",
+    "start": 1670,
+    "end": 2780
+  },
+  {
+    "text": "existed",
+    "start": 2780,
+    "end": 4420
+  },
+  {
+    "text": "until",
+    "start": 4420,
+    "end": 4560
+  },
+  {
+    "text": "this",
+    "start": 4560,
+    "end": 5280
+  },
+  {
+    "text": "week.",
+    "start": 5280,
+    "end": 6640
+  },
+  {
+    "text": "The",
+    "start": 6640,
+    "end": 6930
+  },
+  {
+    "text": "FDA",
+    "start": 6930,
+    "end": 7180
+  },
+  {
+    "text": "just",
+    "start": 7180,
+    "end": 7580
+  },
+  {
+    "text": "approved",
+    "start": 7580,
+    "end": 8270
+  },
+  {
+    "text": "Merck's",
+    "start": 8270,
+    "end": 8910
+  },
+  {
+    "text": "once-daily",
+    "start": 8910,
+    "end": 9790
+  },
+  {
+    "text": "pill,",
+    "start": 9790,
+    "end": 10400
+  },
+  {
+    "text": "the",
+    "start": 10400,
+    "end": 10600
+  },
+  {
+    "text": "first",
+    "start": 10600,
+    "end": 10970
+  },
+  {
+    "text": "oral",
+    "start": 10970,
+    "end": 11200
+  },
+  {
+    "text": "version",
+    "start": 11200,
+    "end": 11640
+  },
+  {
+    "text": "of",
+    "start": 11640,
+    "end": 11780
+  },
+  {
+    "text": "a",
+    "start": 11780,
+    "end": 11850
+  },
+  {
+    "text": "class",
+    "start": 11850,
+    "end": 12220
+  },
+  {
+    "text": "defined",
+    "start": 12220,
+    "end": 12760
+  },
+  {
+    "text": "by",
+    "start": 12760,
+    "end": 12960
+  },
+  {
+    "text": "injectable",
+    "start": 12960,
+    "end": 14120
+  },
+  {
+    "text": "monoclonal",
+    "start": 14120,
+    "end": 15000
+  },
+  {
+    "text": "antibodies.",
+    "start": 15000,
+    "end": 16380
+  },
+  {
+    "text": "The",
+    "start": 16380,
+    "end": 16600
+  },
+  {
+    "text": "problem",
+    "start": 16600,
+    "end": 17110
+  },
+  {
+    "text": "those",
+    "start": 17110,
+    "end": 17490
+  },
+  {
+    "text": "injectables",
+    "start": 17490,
+    "end": 18380
+  },
+  {
+    "text": "never",
+    "start": 18380,
+    "end": 18670
+  },
+  {
+    "text": "solved",
+    "start": 18670,
+    "end": 19100
+  },
+  {
+    "text": "was",
+    "start": 19100,
+    "end": 19880
+  },
+  {
+    "text": "adherence,",
+    "start": 19880,
+    "end": 20130
+  },
+  {
+    "text": "needles,",
+    "start": 20130,
+    "end": 20850
+  },
+  {
+    "text": "biweekly",
+    "start": 20850,
+    "end": 21360
+  },
+  {
+    "text": "dosing,",
+    "start": 21360,
+    "end": 22170
+  },
+  {
+    "text": "specialty",
+    "start": 22170,
+    "end": 22700
+  },
+  {
+    "text": "pharmacy",
+    "start": 22700,
+    "end": 23560
+  },
+  {
+    "text": "friction.",
+    "start": 23560,
+    "end": 24800
+  },
+  {
+    "text": "A",
+    "start": 24800,
+    "end": 24880
+  },
+  {
+    "text": "daily",
+    "start": 24880,
+    "end": 25320
+  },
+  {
+    "text": "pill",
+    "start": 25320,
+    "end": 25600
+  },
+  {
+    "text": "routes",
+    "start": 25600,
+    "end": 26120
+  },
+  {
+    "text": "through",
+    "start": 26120,
+    "end": 26660
+  },
+  {
+    "text": "standard",
+    "start": 26660,
+    "end": 27310
+  },
+  {
+    "text": "retail",
+    "start": 27310,
+    "end": 28450
+  },
+  {
+    "text": "pharmacy.",
+    "start": 28450,
+    "end": 28720
+  },
+  {
+    "text": "AstraZeneca",
+    "start": 28780,
+    "end": 29600
+  },
+  {
+    "text": "was",
+    "start": 29600,
+    "end": 29840
+  },
+  {
+    "text": "in",
+    "start": 29840,
+    "end": 30000
+  },
+  {
+    "text": "the",
+    "start": 30000,
+    "end": 30240
+  },
+  {
+    "text": "same",
+    "start": 30240,
+    "end": 30570
+  },
+  {
+    "text": "race.",
+    "start": 30570,
+    "end": 31200
+  },
+  {
+    "text": "Now",
+    "start": 31200,
+    "end": 31520
+  },
+  {
+    "text": "they",
+    "start": 31520,
+    "end": 31920
+  },
+  {
+    "text": "trail.",
+    "start": 31920,
+    "end": 32800
+  },
+  {
+    "text": "The",
+    "start": 32800,
+    "end": 33040
+  },
+  {
+    "text": "real",
+    "start": 33040,
+    "end": 33360
+  },
+  {
+    "text": "signal",
+    "start": 33360,
+    "end": 33900
+  },
+  {
+    "text": "is",
+    "start": 33900,
+    "end": 33990
+  },
+  {
+    "text": "bigger",
+    "start": 33990,
+    "end": 34460
+  },
+  {
+    "text": "than",
+    "start": 34460,
+    "end": 34790
+  },
+  {
+    "text": "cholesterol.",
+    "start": 34790,
+    "end": 35920
+  },
+  {
+    "text": "If",
+    "start": 35920,
+    "end": 36080
+  },
+  {
+    "text": "a",
+    "start": 36080,
+    "end": 36160
+  },
+  {
+    "text": "monoclonal",
+    "start": 36160,
+    "end": 36960
+  },
+  {
+    "text": "antibody",
+    "start": 36960,
+    "end": 37600
+  },
+  {
+    "text": "mechanism",
+    "start": 37600,
+    "end": 38340
+  },
+  {
+    "text": "can",
+    "start": 38340,
+    "end": 38580
+  },
+  {
+    "text": "be",
+    "start": 38580,
+    "end": 38740
+  },
+  {
+    "text": "reformulated",
+    "start": 38740,
+    "end": 39750
+  },
+  {
+    "text": "into",
+    "start": 39750,
+    "end": 40040
+  },
+  {
+    "text": "an",
+    "start": 40040,
+    "end": 40200
+  },
+  {
+    "text": "FDA-approved",
+    "start": 40200,
+    "end": 41160
+  },
+  {
+    "text": "pill,",
+    "start": 41160,
+    "end": 41880
+  },
+  {
+    "text": "every",
+    "start": 41880,
+    "end": 42160
+  },
+  {
+    "text": "injectable",
+    "start": 42160,
+    "end": 43130
+  },
+  {
+    "text": "biologic",
+    "start": 43130,
+    "end": 43920
+  },
+  {
+    "text": "in",
+    "start": 43920,
+    "end": 44090
+  },
+  {
+    "text": "chronic",
+    "start": 44090,
+    "end": 45030
+  },
+  {
+    "text": "care",
+    "start": 45030,
+    "end": 45170
+  },
+  {
+    "text": "becomes",
+    "start": 45170,
+    "end": 45840
+  },
+  {
+    "text": "an",
+    "start": 45840,
+    "end": 46040
+  },
+  {
+    "text": "oral",
+    "start": 46040,
+    "end": 46410
+  },
+  {
+    "text": "disruption",
+    "start": 46410,
+    "end": 47330
+  },
+  {
+    "text": "target.",
+    "start": 47330,
+    "end": 48320
+  },
+  {
+    "text": "The",
+    "start": 48320,
+    "end": 48580
+  },
+  {
+    "text": "full",
+    "start": 48580,
+    "end": 48920
+  },
+  {
+    "text": "read",
+    "start": 48920,
+    "end": 49380
+  },
+  {
+    "text": "on",
+    "start": 49380,
+    "end": 49450
+  },
+  {
+    "text": "what",
+    "start": 49450,
+    "end": 49800
+  },
+  {
+    "text": "this",
+    "start": 49800,
+    "end": 50150
+  },
+  {
+    "text": "means",
+    "start": 50150,
+    "end": 50590
+  },
+  {
+    "text": "for",
+    "start": 50590,
+    "end": 50850
+  },
+  {
+    "text": "GLP1s,",
+    "start": 50850,
+    "end": 51610
+  },
+  {
+    "text": "IL-17,",
+    "start": 51610,
+    "end": 52810
+  },
+  {
+    "text": "and",
+    "start": 52810,
+    "end": 52930
+  },
+  {
+    "text": "Merck's",
+    "start": 52930,
+    "end": 53440
+  },
+  {
+    "text": "cardio",
+    "start": 53440,
+    "end": 53940
+  },
+  {
+    "text": "franchise",
+    "start": 53940,
+    "end": 55010
+  },
+  {
+    "text": "is",
+    "start": 55010,
+    "end": 55040
+  },
+  {
+    "text": "in",
+    "start": 55040,
+    "end": 55160
+  },
+  {
+    "text": "this",
+    "start": 55160,
+    "end": 55560
+  },
+  {
+    "text": "week's",
+    "start": 55560,
+    "end": 56160
+  },
+  {
+    "text": "bio-intel",
+    "start": 56160,
+    "end": 56980
+  },
+  {
+    "text": "brief.",
+    "start": 56980,
+    "end": 57880
+  },
+  {
+    "text": "Subscribe",
+    "start": 57930,
+    "end": 59640
+  },
+  {
+    "text": "free.",
+    "start": 59640,
+    "end": 59640
+  },
+  {
+    "text": "Signal",
+    "start": 59640,
+    "end": 60370
+  },
+  {
+    "text": "over",
+    "start": 60370,
+    "end": 60470
+  },
+  {
+    "text": "noise.",
+    "start": 60470,
+    "end": 61140
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "BioIntel",
+  "format": "vertical",
+  "captions": {
+    "color": "#1c1f26",
+    "background": "#ffffff"
+  },
+  "corrections": [
+    { "pattern": "bio\\s*intel", "flags": "gi", "right": "BioIntel" },
+    { "pattern": "bion?tel", "flags": "gi", "right": "BioIntel" }
+  ]
+}

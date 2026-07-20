@@ -1,0 +1,176 @@
+# render.yml — PARALLEL (matrix) cloud render for long-form videos.
+#
+# Ships INSIDE the long-form template so every run inherits it (mirrors the
+# biointel-reel skill). Pushed to the shared render farm
+# https://github.com/emotionmedialab/video-renderer .
+#
+# WHY parallel: a long-form video is ~5,000 frames; one runner renders them in
+# sequence (~1 hr at 1080p, ~3 hr at 4K). This SHARDS the frames into N ranges,
+# renders them on N free runners IN PARALLEL, renders the audio ONCE on its own
+# runner, then stitches: concat the muted video chunks + mux the single audio.
+# 4K drops to ~15-20 min, $0. A/V stays clean because audio is never split
+# across chunks — chunks render --muted, the full mix renders separately, they
+# meet only at the final mux.
+#
+# Usage (branch-per-render, like the reel skill):
+#   * push `longform/<name>`     -> 1080p draft  (scale=1, still sharded/fast)
+#   * push `longform/<name>-4k`  -> 4K master    (scale=2)  [name contains "4k"]
+#   * "Run workflow" (manual)    -> override composition / scale / shards / crf
+# Download the `final-video` artifact from the run Summary. Delete the branch
+# after (committed video bloats the repo). NEVER merge the PR GitHub offers —
+# the push itself triggers the render.
+
+name: render
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition: { description: "Composition id", default: "FirstOralPCSK9" }
+      scale: { description: "1 = 1080p, 2 = 4K (blank = decide by branch name)", default: "" }
+      shards: { description: "Parallel video shards (<=18)", default: "16" }
+      crf: { description: "x264 CRF (lower = higher quality)", default: "18" }
+      concurrency: { description: "Per-runner frame concurrency", default: "2" }
+  push:
+    branches-ignore: ["main"]
+
+# Defaults for push events. SCALE: manual input > "4k" in branch name > 1080p.
+env:
+  COMP: ${{ github.event.inputs.composition || 'FirstOralPCSK9' }}
+  SCALE: ${{ github.event.inputs.scale || (contains(github.ref_name, '4k') && '2' || '1') }}
+  SHARDS: ${{ github.event.inputs.shards || '16' }}
+  CRF: ${{ github.event.inputs.crf || '18' }}
+  CONC: ${{ github.event.inputs.concurrency || '2' }}
+
+jobs:
+  # ── 1. Plan: ask Remotion for the real frame count, build shard ranges ───────
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.shard.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libatspi2.0-0 libxshmfence1
+      - run: npm ci
+      - run: node scripts/bootstrap.mjs || true
+      - id: shard
+        run: |
+          set -e
+          # comp-frames.mjs writes the count to a FILE (stdout may carry a
+          # "Downloading Chrome Headless Shell" line on a fresh runner).
+          node scripts/comp-frames.mjs "$COMP" comp-frames.json
+          TOTAL=$(node -e 'process.stdout.write(String(require("./comp-frames.json").durationInFrames))')
+          echo "Composition $COMP has $TOTAL frames; sharding into $SHARDS (scale=$SCALE)."
+          TOTAL="$TOTAL" SHARDS="$SHARDS" node -e '
+            const total=Number(process.env.TOTAL), shards=Number(process.env.SHARDS);
+            const per=Math.ceil(total/shards), out=[];
+            for(let i=0;i<shards;i++){const s=i*per; if(s>=total)break; const e=Math.min(s+per-1,total-1); out.push({index:i,start:s,end:e});}
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "matrix="+JSON.stringify({include:out})+"\n");
+            console.error("shards:", JSON.stringify(out));
+          '
+
+  # ── 2. Audio: render the FULL mix (VO + music) once — no rasterizing ─────────
+  audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libatspi2.0-0 libxshmfence1
+      - run: npm ci
+      - run: node scripts/bootstrap.mjs || true
+      - name: Low-res full render (for its audio — identical at any scale)
+        run: npx remotion render "$COMP" out/lowres.mp4 --scale=0.25 --concurrency=1 --log=info
+      - name: Extract audio
+        run: ffmpeg -y -i out/lowres.mp4 -vn -c:a pcm_s16le out/audio.wav
+      - uses: actions/upload-artifact@v4
+        with: { name: audio, path: out/audio.wav, retention-days: 2 }
+
+  # ── 3. Render: each runner renders ONE muted video chunk, in parallel ────────
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 18
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - name: Free up disk (~10 GB) for 4K
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL || true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libatspi2.0-0 libxshmfence1
+      - run: npm ci
+      - run: node scripts/bootstrap.mjs || true
+      - name: Render chunk ${{ matrix.index }} (frames ${{ matrix.start }}-${{ matrix.end }})
+        run: |
+          printf -v PADDED "%03d" "${{ matrix.index }}"
+          npx remotion render "$COMP" "out/chunk-$PADDED.mp4" \
+            --frames=${{ matrix.start }}-${{ matrix.end }} \
+            --muted --scale="$SCALE" --crf="$CRF" --concurrency="$CONC" \
+            --log=info
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.index }}
+          path: out/chunk-*.mp4
+          retention-days: 2
+
+  # ── 4. Stitch: concat video chunks in order, then mux the single audio ───────
+  stitch:
+    needs: [render, audio]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Get all video chunks
+        uses: actions/download-artifact@v4
+        with: { pattern: chunk-*, path: chunks, merge-multiple: true }
+      - name: Get audio
+        uses: actions/download-artifact@v4
+        with: { name: audio, path: audio }
+      - name: Concat (in frame order) + mux
+        run: |
+          set -e
+          ffmpeg -version | head -1
+          # zero-padded names => lexical sort == frame order
+          for f in $(ls chunks/chunk-*.mp4 | sort); do echo "file '$PWD/$f'"; done > concat.txt
+          echo "--- concat list ---"; cat concat.txt
+          # video chunks share identical encoder settings & each starts on a
+          # keyframe, so stream-copy concat is lossless and exact.
+          ffmpeg -y -f concat -safe 0 -i concat.txt -c copy video.mp4
+          # Final encode: crisp 4K under a HARD size budget. CRF 18 keeps quality
+          # high; the VBV cap (-maxrate/-bufsize) guarantees the video stream can't
+          # exceed ~8 Mbps, so a ~62s clip stays ~55-64MB — comfortably under the
+          # 70MB ceiling — even on the busiest frames. Loudnorm bakes the broadcast-
+          # safe -14 LUFS / -1 dBTP mix into the final audio (cloud skips finalize.mjs).
+          ffmpeg -y -i video.mp4 -i audio/audio.wav \
+            -c:v libx264 -preset slow -crf 18 -maxrate 8M -bufsize 16M -pix_fmt yuv420p \
+            -af "loudnorm=I=-14:TP=-1.0:LRA=11" \
+            -c:a aac -b:a 160k \
+            -map 0:v:0 -map 1:a:0 -shortest "out-final.mp4"
+          echo "--- final ---"; ffprobe -v error -show_entries format=duration:stream=width,height,codec_name -of default=noprint_wrappers=1 out-final.mp4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: out-final.mp4
+          retention-days: 7

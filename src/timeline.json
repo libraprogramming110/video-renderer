@@ -1,0 +1,944 @@
+{
+  "durationMs": 61140,
+  "fps": 30,
+  "meta": {
+    "title": "The First Oral PCSK9 — Merck Just Broke an Injectable Class",
+    "intro": "A once-daily pill just did what injectable monoclonals never could.",
+    "cta": "Subscribe free. Signal over noise."
+  },
+  "sections": [
+    {
+      "index": 0,
+      "title": "The First Pill",
+      "startMs": 50
+    },
+    {
+      "index": 1,
+      "title": "The Adherence Wall",
+      "startMs": 16380
+    },
+    {
+      "index": 2,
+      "title": "The Race Shifts",
+      "startMs": 28780
+    },
+    {
+      "index": 3,
+      "title": "The Real Signal",
+      "startMs": 32800
+    },
+    {
+      "index": 4,
+      "title": "In This Week's Brief",
+      "startMs": 48320
+    }
+  ],
+  "beats": [
+    {
+      "index": 0,
+      "sectionIndex": 0,
+      "section": "The First Pill",
+      "text": "Zero oral PCSK9 inhibitors existed until this week.",
+      "cue": {
+        "type": "stat",
+        "raw": "0 | oral PCSK9 inhibitors — until this week",
+        "value": "0",
+        "label": "oral PCSK9 inhibitors — until this week"
+      },
+      "startMs": 50,
+      "endMs": 6640
+    },
+    {
+      "index": 1,
+      "sectionIndex": 0,
+      "section": "The First Pill",
+      "text": "The FDA just approved Merck's once-daily pill, the first oral version of a class defined by injectable monoclonal antibodies.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"first oral version\"",
+        "phrase": "first oral version"
+      },
+      "startMs": 6640,
+      "endMs": 16380
+    },
+    {
+      "index": 2,
+      "sectionIndex": 1,
+      "section": "The Adherence Wall",
+      "text": "The problem those injectables never solved was adherence, needles, biweekly dosing, specialty pharmacy friction.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"adherence\"",
+        "phrase": "adherence"
+      },
+      "startMs": 16380,
+      "endMs": 24800
+    },
+    {
+      "index": 3,
+      "sectionIndex": 1,
+      "section": "The Adherence Wall",
+      "text": "A daily pill routes through standard retail pharmacy.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"standard retail pharmacy\"",
+        "phrase": "standard retail pharmacy"
+      },
+      "startMs": 24800,
+      "endMs": 28780
+    },
+    {
+      "index": 4,
+      "sectionIndex": 2,
+      "section": "The Race Shifts",
+      "text": "AstraZeneca was in the same race. Now they trail.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"Now they trail\"",
+        "phrase": "Now they trail"
+      },
+      "startMs": 28780,
+      "endMs": 32800
+    },
+    {
+      "index": 5,
+      "sectionIndex": 3,
+      "section": "The Real Signal",
+      "text": "The real signal is bigger than cholesterol.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"bigger than cholesterol\"",
+        "phrase": "bigger than cholesterol"
+      },
+      "startMs": 32800,
+      "endMs": 35920
+    },
+    {
+      "index": 6,
+      "sectionIndex": 3,
+      "section": "The Real Signal",
+      "text": "If a monoclonal antibody mechanism can be reformulated into an FDA-approved pill, every injectable biologic in chronic care becomes an oral disruption target.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"oral disruption target\"",
+        "phrase": "oral disruption target"
+      },
+      "startMs": 35920,
+      "endMs": 48320
+    },
+    {
+      "index": 7,
+      "sectionIndex": 4,
+      "section": "In This Week's Brief",
+      "text": "The full read on what this means for GLP-1s, IL-17, and Merck's cardio franchise is in this week's BioIntel brief.",
+      "cue": {
+        "type": "emphasize",
+        "raw": "\"BioIntel brief\"",
+        "phrase": "BioIntel brief"
+      },
+      "startMs": 48320,
+      "endMs": 57930
+    },
+    {
+      "index": 8,
+      "sectionIndex": 4,
+      "section": "In This Week's Brief",
+      "text": "Subscribe free. Signal over noise.",
+      "cue": null,
+      "startMs": 57930,
+      "endMs": 61140
+    }
+  ],
+  "words": [
+    {
+      "raw": "Zero",
+      "beat": 0,
+      "startMs": 50,
+      "endMs": 450
+    },
+    {
+      "raw": "oral",
+      "beat": 0,
+      "startMs": 450,
+      "endMs": 900
+    },
+    {
+      "raw": "PCSK9",
+      "beat": 0,
+      "startMs": 900,
+      "endMs": 1670
+    },
+    {
+      "raw": "inhibitors",
+      "beat": 0,
+      "startMs": 1670,
+      "endMs": 2780
+    },
+    {
+      "raw": "existed",
+      "beat": 0,
+      "startMs": 2780,
+      "endMs": 4420
+    },
+    {
+      "raw": "until",
+      "beat": 0,
+      "startMs": 4420,
+      "endMs": 4560
+    },
+    {
+      "raw": "this",
+      "beat": 0,
+      "startMs": 4560,
+      "endMs": 5280
+    },
+    {
+      "raw": "week.",
+      "beat": 0,
+      "startMs": 5280,
+      "endMs": 6640
+    },
+    {
+      "raw": "The",
+      "beat": 1,
+      "startMs": 6640,
+      "endMs": 6930
+    },
+    {
+      "raw": "FDA",
+      "beat": 1,
+      "startMs": 6930,
+      "endMs": 7180
+    },
+    {
+      "raw": "just",
+      "beat": 1,
+      "startMs": 7180,
+      "endMs": 7580
+    },
+    {
+      "raw": "approved",
+      "beat": 1,
+      "startMs": 7580,
+      "endMs": 8270
+    },
+    {
+      "raw": "Merck's",
+      "beat": 1,
+      "startMs": 8270,
+      "endMs": 8910
+    },
+    {
+      "raw": "once-daily",
+      "beat": 1,
+      "startMs": 8910,
+      "endMs": 9790
+    },
+    {
+      "raw": "pill,",
+      "beat": 1,
+      "startMs": 9790,
+      "endMs": 10400
+    },
+    {
+      "raw": "the",
+      "beat": 1,
+      "startMs": 10400,
+      "endMs": 10600
+    },
+    {
+      "raw": "first",
+      "beat": 1,
+      "startMs": 10600,
+      "endMs": 10970
+    },
+    {
+      "raw": "oral",
+      "beat": 1,
+      "startMs": 10970,
+      "endMs": 11200
+    },
+    {
+      "raw": "version",
+      "beat": 1,
+      "startMs": 11200,
+      "endMs": 11640
+    },
+    {
+      "raw": "of",
+      "beat": 1,
+      "startMs": 11640,
+      "endMs": 11780
+    },
+    {
+      "raw": "a",
+      "beat": 1,
+      "startMs": 11780,
+      "endMs": 11850
+    },
+    {
+      "raw": "class",
+      "beat": 1,
+      "startMs": 11850,
+      "endMs": 12220
+    },
+    {
+      "raw": "defined",
+      "beat": 1,
+      "startMs": 12220,
+      "endMs": 12760
+    },
+    {
+      "raw": "by",
+      "beat": 1,
+      "startMs": 12760,
+      "endMs": 12960
+    },
+    {
+      "raw": "injectable",
+      "beat": 1,
+      "startMs": 12960,
+      "endMs": 14120
+    },
+    {
+      "raw": "monoclonal",
+      "beat": 1,
+      "startMs": 14120,
+      "endMs": 15000
+    },
+    {
+      "raw": "antibodies.",
+      "beat": 1,
+      "startMs": 15000,
+      "endMs": 16380
+    },
+    {
+      "raw": "The",
+      "beat": 2,
+      "startMs": 16380,
+      "endMs": 16600
+    },
+    {
+      "raw": "problem",
+      "beat": 2,
+      "startMs": 16600,
+      "endMs": 17110
+    },
+    {
+      "raw": "those",
+      "beat": 2,
+      "startMs": 17110,
+      "endMs": 17490
+    },
+    {
+      "raw": "injectables",
+      "beat": 2,
+      "startMs": 17490,
+      "endMs": 18380
+    },
+    {
+      "raw": "never",
+      "beat": 2,
+      "startMs": 18380,
+      "endMs": 18670
+    },
+    {
+      "raw": "solved",
+      "beat": 2,
+      "startMs": 18670,
+      "endMs": 19100
+    },
+    {
+      "raw": "was",
+      "beat": 2,
+      "startMs": 19100,
+      "endMs": 19880
+    },
+    {
+      "raw": "adherence,",
+      "beat": 2,
+      "startMs": 19880,
+      "endMs": 20130
+    },
+    {
+      "raw": "needles,",
+      "beat": 2,
+      "startMs": 20130,
+      "endMs": 20850
+    },
+    {
+      "raw": "biweekly",
+      "beat": 2,
+      "startMs": 20850,
+      "endMs": 21360
+    },
+    {
+      "raw": "dosing,",
+      "beat": 2,
+      "startMs": 21360,
+      "endMs": 22170
+    },
+    {
+      "raw": "specialty",
+      "beat": 2,
+      "startMs": 22170,
+      "endMs": 22700
+    },
+    {
+      "raw": "pharmacy",
+      "beat": 2,
+      "startMs": 22700,
+      "endMs": 23560
+    },
+    {
+      "raw": "friction.",
+      "beat": 2,
+      "startMs": 23560,
+      "endMs": 24800
+    },
+    {
+      "raw": "A",
+      "beat": 3,
+      "startMs": 24800,
+      "endMs": 24880
+    },
+    {
+      "raw": "daily",
+      "beat": 3,
+      "startMs": 24880,
+      "endMs": 25320
+    },
+    {
+      "raw": "pill",
+      "beat": 3,
+      "startMs": 25320,
+      "endMs": 25600
+    },
+    {
+      "raw": "routes",
+      "beat": 3,
+      "startMs": 25600,
+      "endMs": 26120
+    },
+    {
+      "raw": "through",
+      "beat": 3,
+      "startMs": 26120,
+      "endMs": 26660
+    },
+    {
+      "raw": "standard",
+      "beat": 3,
+      "startMs": 26660,
+      "endMs": 27310
+    },
+    {
+      "raw": "retail",
+      "beat": 3,
+      "startMs": 27310,
+      "endMs": 28450
+    },
+    {
+      "raw": "pharmacy.",
+      "beat": 3,
+      "startMs": 28450,
+      "endMs": 28720
+    },
+    {
+      "raw": "AstraZeneca",
+      "beat": 4,
+      "startMs": 28780,
+      "endMs": 29600
+    },
+    {
+      "raw": "was",
+      "beat": 4,
+      "startMs": 29600,
+      "endMs": 29840
+    },
+    {
+      "raw": "in",
+      "beat": 4,
+      "startMs": 29840,
+      "endMs": 30000
+    },
+    {
+      "raw": "the",
+      "beat": 4,
+      "startMs": 30000,
+      "endMs": 30240
+    },
+    {
+      "raw": "same",
+      "beat": 4,
+      "startMs": 30240,
+      "endMs": 30570
+    },
+    {
+      "raw": "race.",
+      "beat": 4,
+      "startMs": 30570,
+      "endMs": 31200
+    },
+    {
+      "raw": "Now",
+      "beat": 4,
+      "startMs": 31200,
+      "endMs": 31520
+    },
+    {
+      "raw": "they",
+      "beat": 4,
+      "startMs": 31520,
+      "endMs": 31920
+    },
+    {
+      "raw": "trail.",
+      "beat": 4,
+      "startMs": 31920,
+      "endMs": 32800
+    },
+    {
+      "raw": "The",
+      "beat": 5,
+      "startMs": 32800,
+      "endMs": 33040
+    },
+    {
+      "raw": "real",
+      "beat": 5,
+      "startMs": 33040,
+      "endMs": 33360
+    },
+    {
+      "raw": "signal",
+      "beat": 5,
+      "startMs": 33360,
+      "endMs": 33900
+    },
+    {
+      "raw": "is",
+      "beat": 5,
+      "startMs": 33900,
+      "endMs": 33990
+    },
+    {
+      "raw": "bigger",
+      "beat": 5,
+      "startMs": 33990,
+      "endMs": 34460
+    },
+    {
+      "raw": "than",
+      "beat": 5,
+      "startMs": 34460,
+      "endMs": 34790
+    },
+    {
+      "raw": "cholesterol.",
+      "beat": 5,
+      "startMs": 34790,
+      "endMs": 35920
+    },
+    {
+      "raw": "If",
+      "beat": 6,
+      "startMs": 35920,
+      "endMs": 36080
+    },
+    {
+      "raw": "a",
+      "beat": 6,
+      "startMs": 36080,
+      "endMs": 36160
+    },
+    {
+      "raw": "monoclonal",
+      "beat": 6,
+      "startMs": 36160,
+      "endMs": 36960
+    },
+    {
+      "raw": "antibody",
+      "beat": 6,
+      "startMs": 36960,
+      "endMs": 37600
+    },
+    {
+      "raw": "mechanism",
+      "beat": 6,
+      "startMs": 37600,
+      "endMs": 38340
+    },
+    {
+      "raw": "can",
+      "beat": 6,
+      "startMs": 38340,
+      "endMs": 38580
+    },
+    {
+      "raw": "be",
+      "beat": 6,
+      "startMs": 38580,
+      "endMs": 38740
+    },
+    {
+      "raw": "reformulated",
+      "beat": 6,
+      "startMs": 38740,
+      "endMs": 39750
+    },
+    {
+      "raw": "into",
+      "beat": 6,
+      "startMs": 39750,
+      "endMs": 40040
+    },
+    {
+      "raw": "an",
+      "beat": 6,
+      "startMs": 40040,
+      "endMs": 40200
+    },
+    {
+      "raw": "FDA-approved",
+      "beat": 6,
+      "startMs": 40200,
+      "endMs": 41160
+    },
+    {
+      "raw": "pill,",
+      "beat": 6,
+      "startMs": 41160,
+      "endMs": 41880
+    },
+    {
+      "raw": "every",
+      "beat": 6,
+      "startMs": 41880,
+      "endMs": 42160
+    },
+    {
+      "raw": "injectable",
+      "beat": 6,
+      "startMs": 42160,
+      "endMs": 43130
+    },
+    {
+      "raw": "biologic",
+      "beat": 6,
+      "startMs": 43130,
+      "endMs": 43920
+    },
+    {
+      "raw": "in",
+      "beat": 6,
+      "startMs": 43920,
+      "endMs": 44090
+    },
+    {
+      "raw": "chronic",
+      "beat": 6,
+      "startMs": 44090,
+      "endMs": 45030
+    },
+    {
+      "raw": "care",
+      "beat": 6,
+      "startMs": 45030,
+      "endMs": 45170
+    },
+    {
+      "raw": "becomes",
+      "beat": 6,
+      "startMs": 45170,
+      "endMs": 45840
+    },
+    {
+      "raw": "an",
+      "beat": 6,
+      "startMs": 45840,
+      "endMs": 46040
+    },
+    {
+      "raw": "oral",
+      "beat": 6,
+      "startMs": 46040,
+      "endMs": 46410
+    },
+    {
+      "raw": "disruption",
+      "beat": 6,
+      "startMs": 46410,
+      "endMs": 47330
+    },
+    {
+      "raw": "target.",
+      "beat": 6,
+      "startMs": 47330,
+      "endMs": 48320
+    },
+    {
+      "raw": "The",
+      "beat": 7,
+      "startMs": 48320,
+      "endMs": 48580
+    },
+    {
+      "raw": "full",
+      "beat": 7,
+      "startMs": 48580,
+      "endMs": 48920
+    },
+    {
+      "raw": "read",
+      "beat": 7,
+      "startMs": 48920,
+      "endMs": 49380
+    },
+    {
+      "raw": "on",
+      "beat": 7,
+      "startMs": 49380,
+      "endMs": 49450
+    },
+    {
+      "raw": "what",
+      "beat": 7,
+      "startMs": 49450,
+      "endMs": 49800
+    },
+    {
+      "raw": "this",
+      "beat": 7,
+      "startMs": 49800,
+      "endMs": 50150
+    },
+    {
+      "raw": "means",
+      "beat": 7,
+      "startMs": 50150,
+      "endMs": 50590
+    },
+    {
+      "raw": "for",
+      "beat": 7,
+      "startMs": 50590,
+      "endMs": 50850
+    },
+    {
+      "raw": "GLP-1s,",
+      "beat": 7,
+      "startMs": 50850,
+      "endMs": 51610
+    },
+    {
+      "raw": "IL-17,",
+      "beat": 7,
+      "startMs": 51610,
+      "endMs": 52810
+    },
+    {
+      "raw": "and",
+      "beat": 7,
+      "startMs": 52810,
+      "endMs": 52930
+    },
+    {
+      "raw": "Merck's",
+      "beat": 7,
+      "startMs": 52930,
+      "endMs": 53440
+    },
+    {
+      "raw": "cardio",
+      "beat": 7,
+      "startMs": 53440,
+      "endMs": 53940
+    },
+    {
+      "raw": "franchise",
+      "beat": 7,
+      "startMs": 53940,
+      "endMs": 55010
+    },
+    {
+      "raw": "is",
+      "beat": 7,
+      "startMs": 55010,
+      "endMs": 55040
+    },
+    {
+      "raw": "in",
+      "beat": 7,
+      "startMs": 55040,
+      "endMs": 55160
+    },
+    {
+      "raw": "this",
+      "beat": 7,
+      "startMs": 55160,
+      "endMs": 55560
+    },
+    {
+      "raw": "week's",
+      "beat": 7,
+      "startMs": 55560,
+      "endMs": 56160
+    },
+    {
+      "raw": "BioIntel",
+      "beat": 7,
+      "startMs": 56160,
+      "endMs": 56980
+    },
+    {
+      "raw": "brief.",
+      "beat": 7,
+      "startMs": 56980,
+      "endMs": 57880
+    },
+    {
+      "raw": "Subscribe",
+      "beat": 8,
+      "startMs": 57930,
+      "endMs": 59640
+    },
+    {
+      "raw": "free.",
+      "beat": 8,
+      "startMs": 59640,
+      "endMs": 59640
+    },
+    {
+      "raw": "Signal",
+      "beat": 8,
+      "startMs": 59640,
+      "endMs": 60370
+    },
+    {
+      "raw": "over",
+      "beat": 8,
+      "startMs": 60370,
+      "endMs": 60470
+    },
+    {
+      "raw": "noise.",
+      "beat": 8,
+      "startMs": 60470,
+      "endMs": 61140
+    }
+  ],
+  "captions": [
+    {
+      "text": "Zero oral PCSK9 inhibitors existed until this",
+      "startMs": 50,
+      "endMs": 5280
+    },
+    {
+      "text": "week.",
+      "startMs": 5280,
+      "endMs": 6640
+    },
+    {
+      "text": "The FDA just approved Merck's once-daily pill,",
+      "startMs": 6640,
+      "endMs": 10400
+    },
+    {
+      "text": "the first oral version of a class defined",
+      "startMs": 10400,
+      "endMs": 12760
+    },
+    {
+      "text": "by injectable monoclonal antibodies.",
+      "startMs": 12760,
+      "endMs": 16380
+    },
+    {
+      "text": "The problem those injectables never solved",
+      "startMs": 16380,
+      "endMs": 19100
+    },
+    {
+      "text": "was adherence, needles, biweekly dosing, specialty",
+      "startMs": 19100,
+      "endMs": 22700
+    },
+    {
+      "text": "pharmacy friction.",
+      "startMs": 22700,
+      "endMs": 24800
+    },
+    {
+      "text": "A daily pill routes through standard retail",
+      "startMs": 24800,
+      "endMs": 28450
+    },
+    {
+      "text": "pharmacy.",
+      "startMs": 28450,
+      "endMs": 28780
+    },
+    {
+      "text": "AstraZeneca was in the same race.",
+      "startMs": 28780,
+      "endMs": 31200
+    },
+    {
+      "text": "Now they trail.",
+      "startMs": 31200,
+      "endMs": 32800
+    },
+    {
+      "text": "The real signal is bigger than cholesterol.",
+      "startMs": 32800,
+      "endMs": 35920
+    },
+    {
+      "text": "If a monoclonal antibody mechanism can be",
+      "startMs": 35920,
+      "endMs": 38740
+    },
+    {
+      "text": "reformulated into an FDA-approved pill, every",
+      "startMs": 38740,
+      "endMs": 42160
+    },
+    {
+      "text": "injectable biologic in chronic care becomes",
+      "startMs": 42160,
+      "endMs": 45840
+    },
+    {
+      "text": "an oral disruption target.",
+      "startMs": 45840,
+      "endMs": 48320
+    },
+    {
+      "text": "The full read on what this means for GLP-1s,",
+      "startMs": 48320,
+      "endMs": 51610
+    },
+    {
+      "text": "IL-17, and Merck's cardio franchise is in",
+      "startMs": 51610,
+      "endMs": 55160
+    },
+    {
+      "text": "this week's BioIntel brief.",
+      "startMs": 55160,
+      "endMs": 57930
+    },
+    {
+      "text": "Subscribe free.",
+      "startMs": 57930,
+      "endMs": 59640
+    },
+    {
+      "text": "Signal over noise.",
+      "startMs": 59640,
+      "endMs": 61540
+    }
+  ]
+}

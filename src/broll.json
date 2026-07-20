@@ -1,0 +1,35 @@
+[
+  {
+    "id": "pharmacy",
+    "sceneKey": "beat3",
+    "query": "pharmacist pharmacy shelves",
+    "start": 24.8,
+    "end": 30.5,
+    "file": "broll/pharmacy.mp4",
+    "pexelsId": 8657333,
+    "credit": "cottonbro studio",
+    "pexelsUrl": "https://www.pexels.com/video/woman-putting-medicine-bottles-on-a-cabinet-8657333/"
+  },
+  {
+    "id": "lab",
+    "sceneKey": "beat6",
+    "query": "medical research laboratory scientist",
+    "start": 36,
+    "end": 48,
+    "file": "broll/lab.mp4",
+    "pexelsId": 8771135,
+    "credit": "Gustavo Fring",
+    "pexelsUrl": "https://www.pexels.com/video/a-man-using-microscope-8771135/"
+  },
+  {
+    "id": "injection",
+    "sceneKey": "beat2",
+    "query": "medical injection syringe closeup",
+    "start": 16.8,
+    "end": 24.5,
+    "file": "broll/injection.mp4",
+    "pexelsId": 5973486,
+    "credit": "olia danilevich",
+    "pexelsUrl": "https://www.pexels.com/video/multiple-shot-of-syringe-ready-for-use-5973486/"
+  }
+]

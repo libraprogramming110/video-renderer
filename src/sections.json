@@ -1,0 +1,27 @@
+[
+  {
+    "index": 0,
+    "title": "The First Pill",
+    "firstBeat": 0
+  },
+  {
+    "index": 1,
+    "title": "The Adherence Wall",
+    "firstBeat": 2
+  },
+  {
+    "index": 2,
+    "title": "The Race Shifts",
+    "firstBeat": 4
+  },
+  {
+    "index": 3,
+    "title": "The Real Signal",
+    "firstBeat": 5
+  },
+  {
+    "index": 4,
+    "title": "In This Week's Brief",
+    "firstBeat": 7
+  }
+]

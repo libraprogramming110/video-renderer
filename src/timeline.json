@@ -1,0 +1,977 @@
+{
+  "durationMs": 53080,
+  "fps": 30,
+  "meta": {
+    "title": "GSK's Hibsago, a six-month course for a lifelong disease",
+    "intro": "",
+    "cta": "The read on winners, losers, and the payer calendar in this week's Catalyst Brief."
+  },
+  "sections": [
+    {
+      "index": 0,
+      "title": "Nineteen percent",
+      "startMs": 200
+    },
+    {
+      "index": 1,
+      "title": "For life",
+      "startMs": 12030
+    },
+    {
+      "index": 2,
+      "title": "Two firsts",
+      "startMs": 17950
+    },
+    {
+      "index": 3,
+      "title": "A narrow label",
+      "startMs": 28240
+    },
+    {
+      "index": 4,
+      "title": "A different frame",
+      "startMs": 36450
+    }
+  ],
+  "beats": [
+    {
+      "index": 0,
+      "sectionIndex": 0,
+      "section": "Nineteen percent",
+      "text": "19%. That is how many patients cleared chronic Hepatitis B after a six-month course of GSK's new drug Hibsago, approved by the FDA on October 20th.",
+      "cue": null,
+      "startMs": 200,
+      "endMs": 12030
+    },
+    {
+      "index": 1,
+      "sectionIndex": 1,
+      "section": "For life",
+      "text": "Current treatments keep the virus suppressed for life. Fewer than one in a hundred clear it in a year.",
+      "cue": null,
+      "startMs": 12030,
+      "endMs": 17950
+    },
+    {
+      "index": 2,
+      "sectionIndex": 2,
+      "section": "Two firsts",
+      "text": "Hibsago is the first antisense oligonucleotide ever approved in this disease, and the first drug ever to target a functional cure in a six-month course.",
+      "cue": null,
+      "startMs": 17950,
+      "endMs": 28240
+    },
+    {
+      "index": 3,
+      "sectionIndex": 3,
+      "section": "A narrow label",
+      "text": "The label is narrow. Adults without cirrhosis, already on antivirals for at least six months, with low surface antigen levels.",
+      "cue": null,
+      "startMs": 28240,
+      "endMs": 36450
+    },
+    {
+      "index": 4,
+      "sectionIndex": 4,
+      "section": "A different frame",
+      "text": "But 240 million people live with chronic Hep B worldwide. For an indication that was lifelong, that is a different frame.",
+      "cue": null,
+      "startMs": 36450,
+      "endMs": 45234
+    },
+    {
+      "index": 5,
+      "sectionIndex": 4,
+      "section": "A different frame",
+      "text": "The read on winners, losers, and the payer calendar is in this week's Catalyst Brief. Subscribe free, signal over noise.",
+      "cue": null,
+      "startMs": 45234,
+      "endMs": 53080
+    }
+  ],
+  "words": [
+    {
+      "raw": "19%.",
+      "beat": 0,
+      "startMs": 200,
+      "endMs": 2000
+    },
+    {
+      "raw": "That",
+      "beat": 0,
+      "startMs": 2000,
+      "endMs": 2308
+    },
+    {
+      "raw": "is",
+      "beat": 0,
+      "startMs": 2308,
+      "endMs": 2457
+    },
+    {
+      "raw": "how",
+      "beat": 0,
+      "startMs": 2457,
+      "endMs": 2680
+    },
+    {
+      "raw": "many",
+      "beat": 0,
+      "startMs": 2680,
+      "endMs": 2988
+    },
+    {
+      "raw": "patients",
+      "beat": 0,
+      "startMs": 2988,
+      "endMs": 3604
+    },
+    {
+      "raw": "cleared",
+      "beat": 0,
+      "startMs": 3604,
+      "endMs": 4136
+    },
+    {
+      "raw": "chronic",
+      "beat": 0,
+      "startMs": 4136,
+      "endMs": 4720
+    },
+    {
+      "raw": "Hepatitis",
+      "beat": 0,
+      "startMs": 4720,
+      "endMs": 5357
+    },
+    {
+      "raw": "B",
+      "beat": 0,
+      "startMs": 5357,
+      "endMs": 5432
+    },
+    {
+      "raw": "after",
+      "beat": 0,
+      "startMs": 5432,
+      "endMs": 5814
+    },
+    {
+      "raw": "a",
+      "beat": 0,
+      "startMs": 5814,
+      "endMs": 5889
+    },
+    {
+      "raw": "six-month",
+      "beat": 0,
+      "startMs": 5889,
+      "endMs": 6580
+    },
+    {
+      "raw": "course",
+      "beat": 0,
+      "startMs": 6580,
+      "endMs": 7010
+    },
+    {
+      "raw": "of",
+      "beat": 0,
+      "startMs": 7010,
+      "endMs": 7150
+    },
+    {
+      "raw": "GSK's",
+      "beat": 0,
+      "startMs": 7150,
+      "endMs": 7600
+    },
+    {
+      "raw": "new",
+      "beat": 0,
+      "startMs": 7600,
+      "endMs": 7860
+    },
+    {
+      "raw": "drug",
+      "beat": 0,
+      "startMs": 7860,
+      "endMs": 8380
+    },
+    {
+      "raw": "Hibsago,",
+      "beat": 0,
+      "startMs": 8380,
+      "endMs": 9150
+    },
+    {
+      "raw": "approved",
+      "beat": 0,
+      "startMs": 9150,
+      "endMs": 9850
+    },
+    {
+      "raw": "by",
+      "beat": 0,
+      "startMs": 9850,
+      "endMs": 10090
+    },
+    {
+      "raw": "the",
+      "beat": 0,
+      "startMs": 10090,
+      "endMs": 10280
+    },
+    {
+      "raw": "FDA",
+      "beat": 0,
+      "startMs": 10280,
+      "endMs": 10540
+    },
+    {
+      "raw": "on",
+      "beat": 0,
+      "startMs": 10540,
+      "endMs": 10780
+    },
+    {
+      "raw": "October",
+      "beat": 0,
+      "startMs": 10780,
+      "endMs": 11320
+    },
+    {
+      "raw": "20th.",
+      "beat": 0,
+      "startMs": 11320,
+      "endMs": 12030
+    },
+    {
+      "raw": "Current",
+      "beat": 1,
+      "startMs": 12030,
+      "endMs": 12400
+    },
+    {
+      "raw": "treatments",
+      "beat": 1,
+      "startMs": 12400,
+      "endMs": 12870
+    },
+    {
+      "raw": "keep",
+      "beat": 1,
+      "startMs": 12870,
+      "endMs": 13030
+    },
+    {
+      "raw": "the",
+      "beat": 1,
+      "startMs": 13030,
+      "endMs": 13200
+    },
+    {
+      "raw": "virus",
+      "beat": 1,
+      "startMs": 13200,
+      "endMs": 13650
+    },
+    {
+      "raw": "suppressed",
+      "beat": 1,
+      "startMs": 13650,
+      "endMs": 14350
+    },
+    {
+      "raw": "for",
+      "beat": 1,
+      "startMs": 14350,
+      "endMs": 14480
+    },
+    {
+      "raw": "life.",
+      "beat": 1,
+      "startMs": 14480,
+      "endMs": 15050
+    },
+    {
+      "raw": "Fewer",
+      "beat": 1,
+      "startMs": 15050,
+      "endMs": 15350
+    },
+    {
+      "raw": "than",
+      "beat": 1,
+      "startMs": 15350,
+      "endMs": 15600
+    },
+    {
+      "raw": "one",
+      "beat": 1,
+      "startMs": 15600,
+      "endMs": 15950
+    },
+    {
+      "raw": "in",
+      "beat": 1,
+      "startMs": 15950,
+      "endMs": 16050
+    },
+    {
+      "raw": "a",
+      "beat": 1,
+      "startMs": 16050,
+      "endMs": 16200
+    },
+    {
+      "raw": "hundred",
+      "beat": 1,
+      "startMs": 16200,
+      "endMs": 16700
+    },
+    {
+      "raw": "clear",
+      "beat": 1,
+      "startMs": 16700,
+      "endMs": 16900
+    },
+    {
+      "raw": "it",
+      "beat": 1,
+      "startMs": 16900,
+      "endMs": 17100
+    },
+    {
+      "raw": "in",
+      "beat": 1,
+      "startMs": 17100,
+      "endMs": 17200
+    },
+    {
+      "raw": "a",
+      "beat": 1,
+      "startMs": 17200,
+      "endMs": 17250
+    },
+    {
+      "raw": "year.",
+      "beat": 1,
+      "startMs": 17250,
+      "endMs": 17950
+    },
+    {
+      "raw": "Hibsago",
+      "beat": 2,
+      "startMs": 17950,
+      "endMs": 18850
+    },
+    {
+      "raw": "is",
+      "beat": 2,
+      "startMs": 18850,
+      "endMs": 18950
+    },
+    {
+      "raw": "the",
+      "beat": 2,
+      "startMs": 18950,
+      "endMs": 19100
+    },
+    {
+      "raw": "first",
+      "beat": 2,
+      "startMs": 19100,
+      "endMs": 19500
+    },
+    {
+      "raw": "antisense",
+      "beat": 2,
+      "startMs": 19500,
+      "endMs": 20320
+    },
+    {
+      "raw": "oligonucleotide",
+      "beat": 2,
+      "startMs": 20320,
+      "endMs": 21380
+    },
+    {
+      "raw": "ever",
+      "beat": 2,
+      "startMs": 21380,
+      "endMs": 21760
+    },
+    {
+      "raw": "approved",
+      "beat": 2,
+      "startMs": 21760,
+      "endMs": 22230
+    },
+    {
+      "raw": "in",
+      "beat": 2,
+      "startMs": 22230,
+      "endMs": 22370
+    },
+    {
+      "raw": "this",
+      "beat": 2,
+      "startMs": 22370,
+      "endMs": 22640
+    },
+    {
+      "raw": "disease,",
+      "beat": 2,
+      "startMs": 22640,
+      "endMs": 23290
+    },
+    {
+      "raw": "and",
+      "beat": 2,
+      "startMs": 23290,
+      "endMs": 23500
+    },
+    {
+      "raw": "the",
+      "beat": 2,
+      "startMs": 23500,
+      "endMs": 23710
+    },
+    {
+      "raw": "first",
+      "beat": 2,
+      "startMs": 23710,
+      "endMs": 24200
+    },
+    {
+      "raw": "drug",
+      "beat": 2,
+      "startMs": 24200,
+      "endMs": 24620
+    },
+    {
+      "raw": "ever",
+      "beat": 2,
+      "startMs": 24620,
+      "endMs": 24820
+    },
+    {
+      "raw": "to",
+      "beat": 2,
+      "startMs": 24820,
+      "endMs": 24970
+    },
+    {
+      "raw": "target",
+      "beat": 2,
+      "startMs": 24970,
+      "endMs": 25430
+    },
+    {
+      "raw": "a",
+      "beat": 2,
+      "startMs": 25430,
+      "endMs": 25660
+    },
+    {
+      "raw": "functional",
+      "beat": 2,
+      "startMs": 25660,
+      "endMs": 26100
+    },
+    {
+      "raw": "cure",
+      "beat": 2,
+      "startMs": 26100,
+      "endMs": 26480
+    },
+    {
+      "raw": "in",
+      "beat": 2,
+      "startMs": 26480,
+      "endMs": 26600
+    },
+    {
+      "raw": "a",
+      "beat": 2,
+      "startMs": 26600,
+      "endMs": 26660
+    },
+    {
+      "raw": "six-month",
+      "beat": 2,
+      "startMs": 26660,
+      "endMs": 27400
+    },
+    {
+      "raw": "course.",
+      "beat": 2,
+      "startMs": 27400,
+      "endMs": 28240
+    },
+    {
+      "raw": "The",
+      "beat": 3,
+      "startMs": 28240,
+      "endMs": 28460
+    },
+    {
+      "raw": "label",
+      "beat": 3,
+      "startMs": 28460,
+      "endMs": 28820
+    },
+    {
+      "raw": "is",
+      "beat": 3,
+      "startMs": 28820,
+      "endMs": 28960
+    },
+    {
+      "raw": "narrow.",
+      "beat": 3,
+      "startMs": 28960,
+      "endMs": 29800
+    },
+    {
+      "raw": "Adults",
+      "beat": 3,
+      "startMs": 29803,
+      "endMs": 29980
+    },
+    {
+      "raw": "without",
+      "beat": 3,
+      "startMs": 29980,
+      "endMs": 30490
+    },
+    {
+      "raw": "cirrhosis,",
+      "beat": 3,
+      "startMs": 30490,
+      "endMs": 31480
+    },
+    {
+      "raw": "already",
+      "beat": 3,
+      "startMs": 31480,
+      "endMs": 31790
+    },
+    {
+      "raw": "on",
+      "beat": 3,
+      "startMs": 31790,
+      "endMs": 31930
+    },
+    {
+      "raw": "antivirals",
+      "beat": 3,
+      "startMs": 31930,
+      "endMs": 32650
+    },
+    {
+      "raw": "for",
+      "beat": 3,
+      "startMs": 32650,
+      "endMs": 32870
+    },
+    {
+      "raw": "at",
+      "beat": 3,
+      "startMs": 32870,
+      "endMs": 33010
+    },
+    {
+      "raw": "least",
+      "beat": 3,
+      "startMs": 33010,
+      "endMs": 33370
+    },
+    {
+      "raw": "six",
+      "beat": 3,
+      "startMs": 33370,
+      "endMs": 33590
+    },
+    {
+      "raw": "months,",
+      "beat": 3,
+      "startMs": 33590,
+      "endMs": 34120
+    },
+    {
+      "raw": "with",
+      "beat": 3,
+      "startMs": 34120,
+      "endMs": 34440
+    },
+    {
+      "raw": "low",
+      "beat": 3,
+      "startMs": 34440,
+      "endMs": 34680
+    },
+    {
+      "raw": "surface",
+      "beat": 3,
+      "startMs": 34680,
+      "endMs": 35230
+    },
+    {
+      "raw": "antigen",
+      "beat": 3,
+      "startMs": 35230,
+      "endMs": 35770
+    },
+    {
+      "raw": "levels.",
+      "beat": 3,
+      "startMs": 35770,
+      "endMs": 36450
+    },
+    {
+      "raw": "But",
+      "beat": 4,
+      "startMs": 36450,
+      "endMs": 36600
+    },
+    {
+      "raw": "240",
+      "beat": 4,
+      "startMs": 36600,
+      "endMs": 37540
+    },
+    {
+      "raw": "million",
+      "beat": 4,
+      "startMs": 37540,
+      "endMs": 38120
+    },
+    {
+      "raw": "people",
+      "beat": 4,
+      "startMs": 38120,
+      "endMs": 38620
+    },
+    {
+      "raw": "live",
+      "beat": 4,
+      "startMs": 38620,
+      "endMs": 38960
+    },
+    {
+      "raw": "with",
+      "beat": 4,
+      "startMs": 38960,
+      "endMs": 39300
+    },
+    {
+      "raw": "chronic",
+      "beat": 4,
+      "startMs": 39300,
+      "endMs": 39550
+    },
+    {
+      "raw": "Hep",
+      "beat": 4,
+      "startMs": 39550,
+      "endMs": 39800
+    },
+    {
+      "raw": "B",
+      "beat": 4,
+      "startMs": 39800,
+      "endMs": 40050
+    },
+    {
+      "raw": "worldwide.",
+      "beat": 4,
+      "startMs": 40050,
+      "endMs": 41200
+    },
+    {
+      "raw": "For",
+      "beat": 4,
+      "startMs": 41200,
+      "endMs": 41490
+    },
+    {
+      "raw": "an",
+      "beat": 4,
+      "startMs": 41490,
+      "endMs": 41730
+    },
+    {
+      "raw": "indication",
+      "beat": 4,
+      "startMs": 41730,
+      "endMs": 42150
+    },
+    {
+      "raw": "that",
+      "beat": 4,
+      "startMs": 42150,
+      "endMs": 42400
+    },
+    {
+      "raw": "was",
+      "beat": 4,
+      "startMs": 42400,
+      "endMs": 42650
+    },
+    {
+      "raw": "lifelong,",
+      "beat": 4,
+      "startMs": 42650,
+      "endMs": 43352
+    },
+    {
+      "raw": "that",
+      "beat": 4,
+      "startMs": 43352,
+      "endMs": 43830
+    },
+    {
+      "raw": "is",
+      "beat": 4,
+      "startMs": 43830,
+      "endMs": 43970
+    },
+    {
+      "raw": "a",
+      "beat": 4,
+      "startMs": 43970,
+      "endMs": 44140
+    },
+    {
+      "raw": "different",
+      "beat": 4,
+      "startMs": 44140,
+      "endMs": 44450
+    },
+    {
+      "raw": "frame.",
+      "beat": 4,
+      "startMs": 44450,
+      "endMs": 45234
+    },
+    {
+      "raw": "The",
+      "beat": 5,
+      "startMs": 45234,
+      "endMs": 45520
+    },
+    {
+      "raw": "read",
+      "beat": 5,
+      "startMs": 45520,
+      "endMs": 45790
+    },
+    {
+      "raw": "on",
+      "beat": 5,
+      "startMs": 45790,
+      "endMs": 45920
+    },
+    {
+      "raw": "winners,",
+      "beat": 5,
+      "startMs": 45920,
+      "endMs": 46600
+    },
+    {
+      "raw": "losers,",
+      "beat": 5,
+      "startMs": 46600,
+      "endMs": 47070
+    },
+    {
+      "raw": "and",
+      "beat": 5,
+      "startMs": 47070,
+      "endMs": 47270
+    },
+    {
+      "raw": "the",
+      "beat": 5,
+      "startMs": 47270,
+      "endMs": 47470
+    },
+    {
+      "raw": "payer",
+      "beat": 5,
+      "startMs": 47470,
+      "endMs": 47800
+    },
+    {
+      "raw": "calendar",
+      "beat": 5,
+      "startMs": 47800,
+      "endMs": 48350
+    },
+    {
+      "raw": "is",
+      "beat": 5,
+      "startMs": 48350,
+      "endMs": 48480
+    },
+    {
+      "raw": "in",
+      "beat": 5,
+      "startMs": 48480,
+      "endMs": 48610
+    },
+    {
+      "raw": "this",
+      "beat": 5,
+      "startMs": 48610,
+      "endMs": 48880
+    },
+    {
+      "raw": "week's",
+      "beat": 5,
+      "startMs": 48880,
+      "endMs": 49330
+    },
+    {
+      "raw": "Catalyst",
+      "beat": 5,
+      "startMs": 49330,
+      "endMs": 49840
+    },
+    {
+      "raw": "Brief.",
+      "beat": 5,
+      "startMs": 49840,
+      "endMs": 50450
+    },
+    {
+      "raw": "Subscribe",
+      "beat": 5,
+      "startMs": 50450,
+      "endMs": 51050
+    },
+    {
+      "raw": "free,",
+      "beat": 5,
+      "startMs": 51050,
+      "endMs": 51680
+    },
+    {
+      "raw": "signal",
+      "beat": 5,
+      "startMs": 51680,
+      "endMs": 52330
+    },
+    {
+      "raw": "over",
+      "beat": 5,
+      "startMs": 52330,
+      "endMs": 52660
+    },
+    {
+      "raw": "noise.",
+      "beat": 5,
+      "startMs": 52660,
+      "endMs": 53080
+    }
+  ],
+  "captions": [
+    {
+      "text": "19%.",
+      "startMs": 200,
+      "endMs": 2000
+    },
+    {
+      "text": "That is how many patients cleared chronic",
+      "startMs": 2000,
+      "endMs": 4720
+    },
+    {
+      "text": "Hepatitis B after a six-month course of GSK's",
+      "startMs": 4720,
+      "endMs": 7600
+    },
+    {
+      "text": "new drug Hibsago, approved by the FDA on October 20th.",
+      "startMs": 7600,
+      "endMs": 12030
+    },
+    {
+      "text": "Current treatments keep the virus suppressed for life.",
+      "startMs": 12030,
+      "endMs": 15050
+    },
+    {
+      "text": "Fewer than one in a hundred clear it in a year.",
+      "startMs": 15050,
+      "endMs": 17950
+    },
+    {
+      "text": "Hibsago is the first antisense oligonucleotide",
+      "startMs": 17950,
+      "endMs": 21380
+    },
+    {
+      "text": "ever approved in this disease, and the first",
+      "startMs": 21380,
+      "endMs": 24200
+    },
+    {
+      "text": "drug ever to target a functional cure in a",
+      "startMs": 24200,
+      "endMs": 26660
+    },
+    {
+      "text": "six-month course.",
+      "startMs": 26660,
+      "endMs": 28240
+    },
+    {
+      "text": "The label is narrow.",
+      "startMs": 28240,
+      "endMs": 29803
+    },
+    {
+      "text": "Adults without cirrhosis, already on antivirals",
+      "startMs": 29803,
+      "endMs": 32650
+    },
+    {
+      "text": "for at least six months, with low surface antigen levels.",
+      "startMs": 32650,
+      "endMs": 36450
+    },
+    {
+      "text": "But 240 million people live with chronic Hep B worldwide.",
+      "startMs": 36450,
+      "endMs": 41200
+    },
+    {
+      "text": "For an indication that was lifelong, that",
+      "startMs": 41200,
+      "endMs": 43830
+    },
+    {
+      "text": "is a different frame.",
+      "startMs": 43830,
+      "endMs": 45234
+    },
+    {
+      "text": "The read on winners, losers, and the payer",
+      "startMs": 45234,
+      "endMs": 47800
+    },
+    {
+      "text": "calendar is in this week's Catalyst Brief.",
+      "startMs": 47800,
+      "endMs": 50450
+    },
+    {
+      "text": "Subscribe free, signal over noise.",
+      "startMs": 50450,
+      "endMs": 53480
+    }
+  ]
+}

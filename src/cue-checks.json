@@ -1,0 +1,359 @@
+[
+ {
+  "label": "§1 count starts",
+  "phrase": "19%",
+  "after": 0,
+  "expect": 200,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 count ends",
+  "phrase": "That is how",
+  "after": 0,
+  "expect": 2000,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 label",
+  "phrase": "cleared chronic",
+  "after": 0,
+  "expect": 3604,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 sub",
+  "phrase": "chronic hepatitis",
+  "after": 0,
+  "expect": 4136,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 retire",
+  "phrase": "after a six-month",
+  "after": 0,
+  "expect": 5432,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 tiles",
+  "phrase": "six-month course",
+  "after": 0,
+  "expect": 5889,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 lid",
+  "phrase": "course of GSK's",
+  "after": 0,
+  "expect": 6580,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 GSK",
+  "phrase": "GSK's new drug",
+  "after": 0,
+  "expect": 7150,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 name",
+  "phrase": "Hibsago, approved",
+  "after": 0,
+  "expect": 8380,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 stamp",
+  "phrase": "approved by the",
+  "after": 0,
+  "expect": 9150,
+  "blockFrom": 0
+ },
+ {
+  "label": "§1 date",
+  "phrase": "October 20th",
+  "after": 0,
+  "expect": 10780,
+  "blockFrom": 0
+ },
+ {
+  "label": "§2 slide",
+  "phrase": "Current treatments",
+  "after": 11610,
+  "expect": 12030,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 grow",
+  "phrase": "suppressed for life",
+  "after": 11610,
+  "expect": 13650,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 pill",
+  "phrase": "for life",
+  "after": 11610,
+  "expect": 14350,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 back",
+  "phrase": "Fewer than",
+  "after": 11610,
+  "expect": 15050,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 <1%",
+  "phrase": "one in a hundred",
+  "after": 11610,
+  "expect": 15600,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 19%",
+  "phrase": "clear it in",
+  "after": 11610,
+  "expect": 16700,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§2 in a year",
+  "phrase": "a year",
+  "after": 11610,
+  "expect": 17200,
+  "blockFrom": 11610
+ },
+ {
+  "label": "§3 kicker",
+  "phrase": "Hibsago is the",
+  "after": 17560,
+  "expect": 17950,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 First",
+  "phrase": "first antisense",
+  "after": 17560,
+  "expect": 19100,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 strand",
+  "phrase": "antisense oligonucleotide",
+  "after": 17560,
+  "expect": 19500,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 label end",
+  "phrase": "ever approved",
+  "after": 17560,
+  "expect": 21380,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 sub",
+  "phrase": "approved in this",
+  "after": 17560,
+  "expect": 21760,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 retire",
+  "phrase": "and the first drug",
+  "after": 17560,
+  "expect": 23290,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 drop",
+  "phrase": "drug ever to",
+  "after": 17560,
+  "expect": 24200,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 aim",
+  "phrase": "target a functional",
+  "after": 17560,
+  "expect": 24970,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 light",
+  "phrase": "six-month course.",
+  "after": 17560,
+  "expect": 26660,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§3 tag",
+  "phrase": "course.",
+  "after": 17560,
+  "expect": 27400,
+  "blockFrom": 17560
+ },
+ {
+  "label": "§4 head",
+  "phrase": "The label is",
+  "after": 27840,
+  "expect": 28240,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 squeeze",
+  "phrase": "narrow, adults",
+  "after": 27840,
+  "expect": 28960,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 row1",
+  "phrase": "adults without",
+  "after": 27840,
+  "expect": 29803,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 cut1",
+  "phrase": "cirrhosis, already",
+  "after": 27840,
+  "expect": 30490,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 row2",
+  "phrase": "already on antivirals",
+  "after": 27840,
+  "expect": 31480,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 cut2",
+  "phrase": "six months with",
+  "after": 27840,
+  "expect": 33370,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 row3",
+  "phrase": "with low surface",
+  "after": 27840,
+  "expect": 34120,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 cut3",
+  "phrase": "antigen levels",
+  "after": 27840,
+  "expect": 35230,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§4 detail",
+  "phrase": "levels.",
+  "after": 27840,
+  "expect": 35770,
+  "blockFrom": 27840
+ },
+ {
+  "label": "§5 240",
+  "phrase": "240 million",
+  "after": 36130,
+  "expect": 36600,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 M",
+  "phrase": "million people",
+  "after": 36130,
+  "expect": 37540,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 sub",
+  "phrase": "people live",
+  "after": 36130,
+  "expect": 38120,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 pill",
+  "phrase": "worldwide.",
+  "after": 36130,
+  "expect": 40050,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 retire",
+  "phrase": "For an",
+  "after": 36130,
+  "expect": 41200,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 block",
+  "phrase": "indication that",
+  "after": 36130,
+  "expect": 41730,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 life",
+  "phrase": "lifelong,",
+  "after": 36130,
+  "expect": 42650,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 dim",
+  "phrase": "that is a",
+  "after": 36130,
+  "expect": 43352,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 frame",
+  "phrase": "a different frame",
+  "after": 36130,
+  "expect": 43970,
+  "blockFrom": 36130
+ },
+ {
+  "label": "§5 six",
+  "phrase": "different frame",
+  "after": 36130,
+  "expect": 44140,
+  "blockFrom": 36130
+ },
+ {
+  "label": "CTA logo",
+  "phrase": "The read on",
+  "after": 44850,
+  "expect": 45234,
+  "blockFrom": 44850
+ },
+ {
+  "label": "CTA sub",
+  "phrase": "winners, losers",
+  "after": 44850,
+  "expect": 45920,
+  "blockFrom": 44850
+ },
+ {
+  "label": "CTA button",
+  "phrase": "Subscribe free",
+  "after": 44850,
+  "expect": 50450,
+  "blockFrom": 44850
+ },
+ {
+  "label": "CTA tail",
+  "phrase": "Signal over",
+  "after": 44850,
+  "expect": 51680,
+  "blockFrom": 44850
+ }
+]

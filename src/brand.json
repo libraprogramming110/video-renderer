@@ -1,0 +1,11 @@
+{
+  "name": "The Catalyst Brief",
+  "format": "vertical",
+  "captions": {
+    "color": "#0D1117",
+    "background": "#ffffff"
+  },
+  "corrections": [
+    { "pattern": "\\b(the\\s+)?catalyst\\s*brief\\b", "flags": "gi", "right": "The Catalyst Brief" }
+  ]
+}

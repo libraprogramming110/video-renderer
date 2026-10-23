@@ -1,0 +1,26 @@
+# Render-repo .gitignore — used ONLY when staging a run to the shared cloud
+# render repo (emotionmedialab/video-renderer). Unlike the template's own
+# .gitignore, the MEDIA must be committed so the CI runner can render it.
+# When staging (Stage 7), copy this over the run's .gitignore:
+#     cp render.gitignore .gitignore
+node_modules/
+out/
+# comp-frames.json is now COMMITTED when staging: the plan job reads it instead of
+# spending ~750 MB of cold setup to recompute one integer. Generate it at staging:
+#   node scripts/comp-frames.mjs <CompId> comp-frames.json
+*.log
+
+# ⚠️ CREDENTIALS. This file REPLACES the run's own .gitignore at staging, so any
+# `.env` rule that lived there is gone the moment you `cp render.gitignore
+# .gitignore`. Without these lines the Pexels/Jamendo key is force-added into a
+# SHARED render repo. Caught pre-commit on the ivonescimab long-form, 2026-08-22.
+.env
+.env.*
+sil.txt
+
+# never stage: the pre-boost VO, the raw bed/clip sources and local working files.
+# (They lived only in staged copies until 2026-10-17; `git add -f public/vo` would still force vo.src.mp3 in,
+# so force-add media by FILE, or delete vo.src.mp3 from the stage copy.)
+public/vo/vo.src.mp3
+_src/
+rms.txt

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "s3_lab",
+    "sceneKey": "s3",
+    "query": "laboratory test tubes",
+    "pexelsId": 8544770,
+    "start": 17.94,
+    "end": 27.82,
+    "targetHeight": 1920,
+    "file": "broll/s3_lab.mp4",
+    "credit": "olia danilevich",
+    "pexelsUrl": "https://www.pexels.com/video/a-person-dropping-a-chemical-into-test-tubes-8544770/"
+  }
+]

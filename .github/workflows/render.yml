@@ -1,0 +1,322 @@
+# render.yml — PARALLEL (matrix) cloud render for long-form videos.
+#
+# Ships INSIDE the long-form template so every run inherits it (mirrors the
+# biointel-reel skill). Pushed to the shared render farm
+# https://github.com/emotionmedialab/video-renderer .
+#
+# WHY parallel: a long-form video is ~5,000 frames; one runner renders them in
+# sequence (~1 hr at 1080p, ~3 hr at 4K). This SHARDS the frames into N ranges,
+# renders them on N free runners IN PARALLEL, renders the audio ONCE on its own
+# runner, then stitches: concat the muted video chunks + mux the single audio.
+# 4K drops to ~15-20 min, $0. A/V stays clean because audio is never split
+# across chunks — chunks render --muted, the full mix renders separately, they
+# meet only at the final mux.
+#
+# Usage (branch-per-render, like the reel skill):
+#   * push `longform/<name>`     -> 1080p draft  (scale=1, still sharded/fast)
+#   * push `longform/<name>-4k`  -> 4K master    (scale=2)  [name contains "4k"]
+#   * "Run workflow" (manual)    -> override composition / scale / shards / crf
+# Download the `final-video` artifact from the run Summary. Delete the branch
+# after (committed video bloats the repo). NEVER merge the PR GitHub offers —
+# the push itself triggers the render.
+
+name: render
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition: { description: "Composition id", default: "Hibsago" }
+      scale: { description: "1 = 1080p, 2 = 4K (blank = decide by branch name)", default: "" }
+      shards: { description: "Parallel video shards (<=18)", default: "16" }
+      crf: { description: "x264 CRF (lower = higher quality)", default: "18" }
+      concurrency: { description: "Per-runner frame concurrency", default: "2" }
+  push:
+    branches-ignore: ["main"]
+
+# Defaults for push events. SCALE: manual input > "4k" in branch name > 1080p.
+# ⚠️ SET `COMP` TO YOUR COMPOSITION ID BEFORE STAGING — the default is the
+# template's 3s health-check card, not a video.
+env:
+  COMP: ${{ github.event.inputs.composition || 'Hibsago' }}
+  SCALE: ${{ github.event.inputs.scale || (contains(github.ref_name, '4k') && '2' || '1') }}
+  SHARDS: ${{ github.event.inputs.shards || '16' }}
+  CRF: ${{ github.event.inputs.crf || '18' }}
+  CONC: ${{ github.event.inputs.concurrency || '2' }}
+  # ── DELIVERY LOUDNESS (applied at the stitch mux — see the stitch job) ──
+  LUFS: "-12"
+  TPEAK: "-1.5" # AAC adds inter-sample peaks; -1.5 lands inside a -1.0 ceiling
+  # ── RATE CONTROL — "highest bitrate under a hard size cap" ────────────────
+  # CRF cannot do this: it targets a QUALITY level and lets size land wherever
+  # the content takes it, so flat motion-graphics undershoot badly (~20-30 MB at
+  # 4K). To FILL a budget you must drive the chunks with ABR.
+  # (--crf and --video-bitrate are MUTUALLY EXCLUSIVE in Remotion.)
+  #
+  # Derive VBIT from DURATION, per video — it is NOT a universal constant:
+  #   video budget = CAP_MiB - audio(bps*dur/8) - ~0.5 MB container
+  #   Mbps = budget*8/duration ; set the target ~10% under for ABR overshoot.
+  #   Worked (2026-07-24): 60.23s + 256k AAC under 100 MiB -> ~13.6 max -> 12M.
+  # To use ABR, swap the render step's --crf for:
+  #   --video-bitrate="$VBIT" --encoding-max-rate="$VMAX" --encoding-buffer-size="$VBUF"
+  VBIT: "13600k"
+  VMAX: "21M" # peak ceiling for the busiest (footage) frames
+  VBUF: "42M" # VBV buffer = 2x peak
+  #
+  # ⚠️ DON'T SET A SIZE FLOOR ON FLAT MOTION-GRAPHICS. Proven 2026-07-24: with
+  # VBIT=12M the content delivered 8.5 Mbps / 64 MB and failed a 70 MB floor —
+  # NOT because rate control failed (it did apply; CRF 18 would have been ~30 MB)
+  # but because flat graphics bottom out at x264's quality floor and cannot
+  # absorb more bits, and short shards give the rate controller no room to spend
+  # its budget. A floor there just discards a good master. A CEILING is the real
+  # constraint; leave the floor off unless you've proven the content can fill it.
+  MIN_MB: "0"
+  MAX_MB: "100" # hard size CEILING in MiB (0 = off)
+
+jobs:
+  # ── 1. Plan: ask Remotion for the real frame count, build shard ranges ───────
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.shard.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      # ⚠️ NO npm ci, NO apt, NO Remotion bundle. This job's entire output is ONE
+      # INTEGER (durationInFrames). Building a full ~750 MB environment to learn it
+      # cost 15-18 min of pure critical path while all 16 render shards sat idle
+      # waiting on it. comp-frames.json is now generated LOCALLY AT STAGING (8s,
+      # measured) and committed — the runbook already required generating it as the
+      # "did COMP actually resolve?" guard, so this reuses a step that was already
+      # happening. Node is preinstalled on the runner; a checkout is all this needs.
+      - id: shard
+        run: |
+          set -e
+          test -f comp-frames.json || {
+            echo "::error::comp-frames.json missing. Run: node scripts/comp-frames.mjs $COMP comp-frames.json — then commit it."
+            exit 1; }
+          GOT=$(node -e 'process.stdout.write(String(require("./comp-frames.json").id))')
+          if [ "$GOT" != "$COMP" ]; then
+            echo "::error::comp-frames.json is for composition $GOT but COMP is $COMP — regenerate and commit it."
+            exit 1
+          fi
+          TOTAL=$(node -e 'process.stdout.write(String(require("./comp-frames.json").durationInFrames))')
+          echo "Composition $COMP has $TOTAL frames; sharding into $SHARDS (scale=$SCALE)."
+          TOTAL="$TOTAL" SHARDS="$SHARDS" node -e '
+            const total=Number(process.env.TOTAL), shards=Number(process.env.SHARDS);
+            const per=Math.ceil(total/shards), out=[];
+            for(let i=0;i<shards;i++){const s=i*per; if(s>=total)break; const e=Math.min(s+per-1,total-1); out.push({index:i,start:s,end:e});}
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "matrix="+JSON.stringify({include:out})+"\n");
+            console.error("shards:", JSON.stringify(out));
+          '
+
+  # ── 2. Audio: render the FULL mix (VO + music) once — no rasterizing ─────────
+  audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20", cache: "npm" }
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libatspi2.0-0 libxshmfence1
+      - run: npm ci
+      # ⚠️ Restored AFTER npm ci, never before — npm ci DELETES node_modules
+      # wholesale, so a cache restored earlier in the job is thrown straight away.
+      # Keyed to the Remotion version because the browser build is pinned to it.
+      - name: Cache Chrome Headless Shell (270 MB, re-downloaded per job otherwise)
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-4.0.475
+      - run: node scripts/bootstrap.mjs || true
+      # ⚠️ AUDIO-ONLY. This used to rasterize all 1712 frames at scale 0.25 purely to
+      # throw the video away and keep the audio track — ~20 min, and it was the job
+      # `stitch` actually blocked on, so it set the whole render's wall clock.
+      # `--codec=wav` skips rasterizing entirely. Verified locally on this exact
+      # composition: 95s, producing 57.066s of 48kHz stereo measuring -10.8 LUFS /
+      # -3.1 dBTP — the identical mix, with no video pass.
+      - name: Render the mix (audio only — no rasterizing)
+        run: npx remotion render "$COMP" out/audio.wav --codec=wav --log=info
+      - uses: actions/upload-artifact@v4
+        with: { name: audio, path: out/audio.wav, retention-days: 2 }
+
+  # ── 3. Render: each runner renders ONE muted video chunk, in parallel ────────
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 18
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - name: Free up disk (~10 GB) for 4K
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /opt/hostedtoolcache/CodeQL || true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20", cache: "npm" }
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libcairo2 libatspi2.0-0 libxshmfence1
+      - run: npm ci
+      # ⚠️ Restored AFTER npm ci, never before — npm ci DELETES node_modules
+      # wholesale, so a cache restored earlier in the job is thrown straight away.
+      # Keyed to the Remotion version because the browser build is pinned to it.
+      - name: Cache Chrome Headless Shell (270 MB, re-downloaded per job otherwise)
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.remotion
+          key: remotion-browser-${{ runner.os }}-4.0.475
+      - run: node scripts/bootstrap.mjs || true
+      - name: Render chunk ${{ matrix.index }} (frames ${{ matrix.start }}-${{ matrix.end }})
+        run: |
+          printf -v PADDED "%03d" "${{ matrix.index }}"
+          # DEFAULT = CRF (content-adaptive, near-lossless on flat graphics, and
+          # not tied to this video's duration). For "highest bitrate under N MB"
+          # swap the --crf line for the ABR trio — see the VBIT note in `env`.
+          npx remotion render "$COMP" "out/chunk-$PADDED.mp4" \
+            --frames=${{ matrix.start }}-${{ matrix.end }} \
+            --muted --scale="$SCALE" --concurrency="$CONC" \
+            --video-bitrate="$VBIT" --encoding-max-rate="$VMAX" --encoding-buffer-size="$VBUF" \
+            --log=info
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.index }}
+          path: out/chunk-*.mp4
+          retention-days: 2
+
+  # ── 4. Stitch: concat video chunks in order, then mux the single audio ───────
+  stitch:
+    needs: [render, audio]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Get all video chunks
+        uses: actions/download-artifact@v4
+        with: { pattern: chunk-*, path: chunks, merge-multiple: true }
+      - name: Get audio
+        uses: actions/download-artifact@v4
+        with: { name: audio, path: audio }
+      - name: Concat (in frame order) + mux with final loudness
+        run: |
+          set -e
+          ffmpeg -version | head -1
+          # zero-padded names => lexical sort == frame order
+          for f in $(ls chunks/chunk-*.mp4 | sort); do echo "file '$PWD/$f'"; done > concat.txt
+          echo "--- concat list ---"; cat concat.txt
+          # video chunks share identical encoder settings & each starts on a
+          # keyframe, so stream-copy concat is lossless and exact.
+          ffmpeg -y -f concat -safe 0 -i concat.txt -c copy video.mp4
+
+          # ── GUARD: catch a STALE comp-frames.json ─────────────────────────
+          # Shard ranges now come from a committed file rather than a live Remotion
+          # query, so an out-of-date file would silently render the wrong range.
+          # Duration comes from container metadata (instant) rather than counting
+          # 1712 4K frames.
+          EXPECT=$(node -e 'const c=require("./comp-frames.json");process.stdout.write((c.durationInFrames/c.fps).toFixed(2))')
+          GOTD=$(ffprobe -v error -show_entries format=duration -of csv=p=0 video.mp4)
+          echo "duration: expected ${EXPECT}s, got ${GOTD}s"
+          node -e 'const e=Number(process.argv[1]),g=Number(process.argv[2]);if(Math.abs(e-g)>0.15){console.error("::error::Stitched video is "+g+"s, expected "+e+"s — comp-frames.json is stale. Regenerate and re-push.");process.exit(1)}' "$EXPECT" "$GOTD"
+
+          # ── FINAL LOUDNESS (two-pass loudnorm) ────────────────────────────
+          # The chunks render --muted and finalize.mjs NEVER runs in CI, so this
+          # mux is the ONLY place the delivered mix gets its loudness set. Cut the
+          # VO source with headroom (~-3 dBTP) so the Remotion mix of VO + music
+          # bed cannot clip, then let this pass restore the delivery target.
+          # Override LUFS/TP per video via the env block above.
+          echo "--- pass 1: measure ---"
+          ffmpeg -hide_banner -nostats -i audio/audio.wav \
+            -af loudnorm=I=${LUFS}:TP=${TPEAK}:LRA=11:print_format=json -f null - 2> ln.log || true
+          node -e '
+            const fs = require("fs");
+            const m = fs.readFileSync("ln.log", "utf8").match(/\{[\s\S]*?\}/);
+            if (!m) { fs.writeFileSync("ln.args", ""); console.error("measure failed - single-pass fallback"); process.exit(0); }
+            const j = JSON.parse(m[0]);
+            console.error("measured I=" + j.input_i + " TP=" + j.input_tp + " LRA=" + j.input_lra);
+            fs.writeFileSync("ln.args",
+              ":measured_I=" + j.input_i + ":measured_TP=" + j.input_tp +
+              ":measured_LRA=" + j.input_lra + ":measured_thresh=" + j.input_thresh +
+              ":offset=" + j.target_offset);
+          '
+          LN=$(cat ln.args)
+          echo "--- pass 2: apply + mux ---"
+          ffmpeg -y -i video.mp4 -i audio/audio.wav \
+            -c:v copy -filter:a "loudnorm=I=${LUFS}:TP=${TPEAK}:LRA=11${LN}" -c:a aac -b:a 256k -ar 48000 \
+            -map 0:v:0 -map 1:a:0 -shortest "out-final.mp4"
+
+          echo "--- final ---"
+          ffprobe -v error -show_entries format=duration,bit_rate:stream=width,height,codec_name,pix_fmt -of default=noprint_wrappers=1 out-final.mp4
+          echo "--- delivered loudness ---"
+          ffmpeg -hide_banner -nostats -i out-final.mp4 \
+            -af loudnorm=I=-14:TP=-1.0:print_format=json -f null - 2>&1 | grep -E '"input_i"|"input_tp"' || true
+
+          # ── SIZE + RESOLUTION GUARD ───────────────────────────────────────
+          # A silent undershoot (wrong scale, rate control not applied) would
+          # otherwise ship as a "successful" render. Fail loudly instead.
+          # MIN_MB=0 disables the size floor.
+          BYTES=$(stat -c%s out-final.mp4); MB=$((BYTES / 1024 / 1024))
+          W=$(ffprobe -v error -select_streams v:0 -show_entries stream=width -of csv=p=0 out-final.mp4)
+          H=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of csv=p=0 out-final.mp4)
+          echo "master: ${MB} MB @ ${W}x${H}"
+          if [ "${MIN_MB}" != "0" ] && [ "$MB" -lt "${MIN_MB}" ]; then
+            echo "::error::Master is ${MB} MB, below the ${MIN_MB} MB floor — rate control did not apply."
+            exit 1
+          fi
+          if [ "${MAX_MB}" != "0" ] && [ "$MB" -gt "${MAX_MB}" ]; then
+            echo "::error::Master is ${MB} MB, over the ${MAX_MB} MB ceiling — lower VBIT and re-run."
+            exit 1
+          fi
+          # ⚠️ Check the LONG EDGE, not the width. A vertical 4K master is
+          # 2160x3840, so a width>=3840 test fails every portrait render — after
+          # the full render has already burned, with no artifact uploaded.
+          LONG="$W"; [ "$H" -gt "$W" ] && LONG="$H"
+          if [ "$SCALE" = "2" ] && [ "$LONG" -lt 3840 ]; then
+            echo "::error::Expected 4K (3840 long edge) but got ${W}x${H} — scale did not apply."
+            exit 1
+          fi
+          echo "::notice::Master OK — ${MB} MB @ ${W}x${H}"
+      # ⚠️ `if: always()` — upload the master EVEN IF the guard above failed.
+      # On 2026-07-24 a finished, correct 4K master was destroyed by a bad MIN_MB
+      # floor: the guard exited 1, this step was skipped, and ~20 min of runner
+      # time produced nothing downloadable. The guard's job is to flag a suspect
+      # master, not to withhold it — the run still goes red so it can't be
+      # mistaken for a clean pass.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-video
+          path: out-final.mp4
+          retention-days: 3
+
+  # ── 5. Cleanup: delete the intermediate chunk-* + audio artifacts ──────────
+  # They are consumed by `stitch` and useless afterward, yet they are ~19 of the
+  # ~20 artifacts each run produces — the accumulation that filled the Actions
+  # artifact-storage quota and silently broke the farm (2026-07-20). Deleting
+  # them here keeps the shared farm under its cap. `final-video` is kept
+  # (retention now 3 days). Runs only on a clean stitch; a failed run keeps its
+  # chunks for debugging (they auto-expire in 2 days anyway).
+  cleanup:
+    needs: [stitch]
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Delete intermediate artifacts (chunk-* + audio)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          ids=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --paginate \
+            --jq '.artifacts[] | select((.name | startswith("chunk-")) or (.name == "audio")) | .id')
+          for id in $ids; do
+            echo "Deleting intermediate artifact $id"
+            gh api -X DELETE "repos/${{ github.repository }}/actions/artifacts/$id" || true
+          done
+          echo "Intermediate artifacts cleaned."

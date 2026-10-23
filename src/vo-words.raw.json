@@ -1,0 +1,657 @@
+[
+  {
+    "text": "19%.",
+    "start": 200,
+    "end": 2280
+  },
+  {
+    "text": "That",
+    "start": 2280,
+    "end": 2570
+  },
+  {
+    "text": "is",
+    "start": 2570,
+    "end": 2710
+  },
+  {
+    "text": "how",
+    "start": 2710,
+    "end": 2920
+  },
+  {
+    "text": "many",
+    "start": 2920,
+    "end": 3210
+  },
+  {
+    "text": "patients",
+    "start": 3210,
+    "end": 3790
+  },
+  {
+    "text": "cleared",
+    "start": 3790,
+    "end": 4290
+  },
+  {
+    "text": "chronic",
+    "start": 4290,
+    "end": 4840
+  },
+  {
+    "text": "hepatitis",
+    "start": 4840,
+    "end": 5440
+  },
+  {
+    "text": "B",
+    "start": 5440,
+    "end": 5510
+  },
+  {
+    "text": "after",
+    "start": 5510,
+    "end": 5870
+  },
+  {
+    "text": "a",
+    "start": 5870,
+    "end": 5940
+  },
+  {
+    "text": "six-month",
+    "start": 5940,
+    "end": 6580
+  },
+  {
+    "text": "course",
+    "start": 6580,
+    "end": 7010
+  },
+  {
+    "text": "of",
+    "start": 7010,
+    "end": 7150
+  },
+  {
+    "text": "GSK's",
+    "start": 7150,
+    "end": 7600
+  },
+  {
+    "text": "new",
+    "start": 7600,
+    "end": 7860
+  },
+  {
+    "text": "drug,",
+    "start": 7860,
+    "end": 8380
+  },
+  {
+    "text": "Hibsago,",
+    "start": 8380,
+    "end": 9150
+  },
+  {
+    "text": "approved",
+    "start": 9150,
+    "end": 9850
+  },
+  {
+    "text": "by",
+    "start": 9850,
+    "end": 10090
+  },
+  {
+    "text": "the",
+    "start": 10090,
+    "end": 10280
+  },
+  {
+    "text": "FDA",
+    "start": 10280,
+    "end": 10540
+  },
+  {
+    "text": "on",
+    "start": 10540,
+    "end": 10780
+  },
+  {
+    "text": "October",
+    "start": 10780,
+    "end": 11320
+  },
+  {
+    "text": "20th.",
+    "start": 11320,
+    "end": 12360
+  },
+  {
+    "text": "Current",
+    "start": 12360,
+    "end": 12770
+  },
+  {
+    "text": "treatments",
+    "start": 12770,
+    "end": 13360
+  },
+  {
+    "text": "keep",
+    "start": 13360,
+    "end": 13590
+  },
+  {
+    "text": "the",
+    "start": 13590,
+    "end": 13760
+  },
+  {
+    "text": "virus",
+    "start": 13760,
+    "end": 14050
+  },
+  {
+    "text": "suppressed",
+    "start": 14050,
+    "end": 14570
+  },
+  {
+    "text": "for",
+    "start": 14570,
+    "end": 15030
+  },
+  {
+    "text": "life.",
+    "start": 15030,
+    "end": 15280
+  },
+  {
+    "text": "Fewer",
+    "start": 15280,
+    "end": 15680
+  },
+  {
+    "text": "than",
+    "start": 15680,
+    "end": 16000
+  },
+  {
+    "text": "one",
+    "start": 16000,
+    "end": 16240
+  },
+  {
+    "text": "in",
+    "start": 16240,
+    "end": 16400
+  },
+  {
+    "text": "a",
+    "start": 16400,
+    "end": 16480
+  },
+  {
+    "text": "hundred",
+    "start": 16480,
+    "end": 17050
+  },
+  {
+    "text": "clear",
+    "start": 17050,
+    "end": 17450
+  },
+  {
+    "text": "it",
+    "start": 17450,
+    "end": 17770
+  },
+  {
+    "text": "in",
+    "start": 17770,
+    "end": 17850
+  },
+  {
+    "text": "a",
+    "start": 17850,
+    "end": 17980
+  },
+  {
+    "text": "year.",
+    "start": 17980,
+    "end": 18480
+  },
+  {
+    "text": "Hibsago",
+    "start": 18480,
+    "end": 19110
+  },
+  {
+    "text": "is",
+    "start": 19110,
+    "end": 19120
+  },
+  {
+    "text": "the",
+    "start": 19120,
+    "end": 19320
+  },
+  {
+    "text": "first",
+    "start": 19320,
+    "end": 19680
+  },
+  {
+    "text": "antisense",
+    "start": 19680,
+    "end": 20320
+  },
+  {
+    "text": "oligonucleotide",
+    "start": 20320,
+    "end": 21380
+  },
+  {
+    "text": "ever",
+    "start": 21380,
+    "end": 21760
+  },
+  {
+    "text": "approved",
+    "start": 21760,
+    "end": 22230
+  },
+  {
+    "text": "in",
+    "start": 22230,
+    "end": 22370
+  },
+  {
+    "text": "this",
+    "start": 22370,
+    "end": 22640
+  },
+  {
+    "text": "disease,",
+    "start": 22640,
+    "end": 23290
+  },
+  {
+    "text": "and",
+    "start": 23290,
+    "end": 23500
+  },
+  {
+    "text": "the",
+    "start": 23500,
+    "end": 23710
+  },
+  {
+    "text": "first",
+    "start": 23710,
+    "end": 24200
+  },
+  {
+    "text": "drug",
+    "start": 24200,
+    "end": 24620
+  },
+  {
+    "text": "ever",
+    "start": 24620,
+    "end": 24820
+  },
+  {
+    "text": "to",
+    "start": 24820,
+    "end": 24970
+  },
+  {
+    "text": "target",
+    "start": 24970,
+    "end": 25430
+  },
+  {
+    "text": "a",
+    "start": 25430,
+    "end": 25660
+  },
+  {
+    "text": "functional",
+    "start": 25660,
+    "end": 26270
+  },
+  {
+    "text": "cure",
+    "start": 26270,
+    "end": 26580
+  },
+  {
+    "text": "in",
+    "start": 26580,
+    "end": 26730
+  },
+  {
+    "text": "a",
+    "start": 26730,
+    "end": 26800
+  },
+  {
+    "text": "six-month",
+    "start": 26800,
+    "end": 27480
+  },
+  {
+    "text": "course.",
+    "start": 27480,
+    "end": 28240
+  },
+  {
+    "text": "The",
+    "start": 28240,
+    "end": 28460
+  },
+  {
+    "text": "label",
+    "start": 28460,
+    "end": 28820
+  },
+  {
+    "text": "is",
+    "start": 28820,
+    "end": 28960
+  },
+  {
+    "text": "narrow,",
+    "start": 28960,
+    "end": 29800
+  },
+  {
+    "text": "adults",
+    "start": 29800,
+    "end": 29980
+  },
+  {
+    "text": "without",
+    "start": 29980,
+    "end": 30490
+  },
+  {
+    "text": "cirrhosis,",
+    "start": 30490,
+    "end": 31480
+  },
+  {
+    "text": "already",
+    "start": 31480,
+    "end": 31790
+  },
+  {
+    "text": "on",
+    "start": 31790,
+    "end": 31930
+  },
+  {
+    "text": "antivirals",
+    "start": 31930,
+    "end": 32650
+  },
+  {
+    "text": "for",
+    "start": 32650,
+    "end": 32870
+  },
+  {
+    "text": "at",
+    "start": 32870,
+    "end": 33010
+  },
+  {
+    "text": "least",
+    "start": 33010,
+    "end": 33370
+  },
+  {
+    "text": "six",
+    "start": 33370,
+    "end": 33590
+  },
+  {
+    "text": "months",
+    "start": 33590,
+    "end": 34120
+  },
+  {
+    "text": "with",
+    "start": 34120,
+    "end": 34440
+  },
+  {
+    "text": "low",
+    "start": 34440,
+    "end": 34680
+  },
+  {
+    "text": "surface",
+    "start": 34680,
+    "end": 35230
+  },
+  {
+    "text": "antigen",
+    "start": 35230,
+    "end": 35770
+  },
+  {
+    "text": "levels.",
+    "start": 35770,
+    "end": 36520
+  },
+  {
+    "text": "But",
+    "start": 36520,
+    "end": 36770
+  },
+  {
+    "text": "240",
+    "start": 36770,
+    "end": 37540
+  },
+  {
+    "text": "million",
+    "start": 37540,
+    "end": 38120
+  },
+  {
+    "text": "people",
+    "start": 38120,
+    "end": 38620
+  },
+  {
+    "text": "live",
+    "start": 38620,
+    "end": 38960
+  },
+  {
+    "text": "with",
+    "start": 38960,
+    "end": 39300
+  },
+  {
+    "text": "chronic",
+    "start": 39300,
+    "end": 39890
+  },
+  {
+    "text": "hep",
+    "start": 39890,
+    "end": 40140
+  },
+  {
+    "text": "B",
+    "start": 40140,
+    "end": 40220
+  },
+  {
+    "text": "worldwide.",
+    "start": 40220,
+    "end": 41280
+  },
+  {
+    "text": "For",
+    "start": 41280,
+    "end": 41490
+  },
+  {
+    "text": "an",
+    "start": 41490,
+    "end": 41730
+  },
+  {
+    "text": "indication",
+    "start": 41730,
+    "end": 42350
+  },
+  {
+    "text": "that",
+    "start": 42350,
+    "end": 42640
+  },
+  {
+    "text": "was",
+    "start": 42640,
+    "end": 42840
+  },
+  {
+    "text": "lifelong,",
+    "start": 42840,
+    "end": 43550
+  },
+  {
+    "text": "that",
+    "start": 43550,
+    "end": 43830
+  },
+  {
+    "text": "is",
+    "start": 43830,
+    "end": 43970
+  },
+  {
+    "text": "a",
+    "start": 43970,
+    "end": 44140
+  },
+  {
+    "text": "different",
+    "start": 44140,
+    "end": 44670
+  },
+  {
+    "text": "frame.",
+    "start": 44670,
+    "end": 45320
+  },
+  {
+    "text": "The",
+    "start": 45320,
+    "end": 45520
+  },
+  {
+    "text": "read",
+    "start": 45520,
+    "end": 45790
+  },
+  {
+    "text": "on",
+    "start": 45790,
+    "end": 45920
+  },
+  {
+    "text": "winners,",
+    "start": 45920,
+    "end": 46600
+  },
+  {
+    "text": "losers,",
+    "start": 46600,
+    "end": 47070
+  },
+  {
+    "text": "and",
+    "start": 47070,
+    "end": 47270
+  },
+  {
+    "text": "the",
+    "start": 47270,
+    "end": 47470
+  },
+  {
+    "text": "payer",
+    "start": 47470,
+    "end": 47800
+  },
+  {
+    "text": "calendar",
+    "start": 47800,
+    "end": 48350
+  },
+  {
+    "text": "is",
+    "start": 48350,
+    "end": 48480
+  },
+  {
+    "text": "in",
+    "start": 48480,
+    "end": 48610
+  },
+  {
+    "text": "this",
+    "start": 48610,
+    "end": 48880
+  },
+  {
+    "text": "week's",
+    "start": 48880,
+    "end": 49330
+  },
+  {
+    "text": "Catalyst",
+    "start": 49330,
+    "end": 49840
+  },
+  {
+    "text": "Brief.",
+    "start": 49840,
+    "end": 50520
+  },
+  {
+    "text": "Subscribe",
+    "start": 50520,
+    "end": 51260
+  },
+  {
+    "text": "free.",
+    "start": 51260,
+    "end": 51840
+  },
+  {
+    "text": "Signal",
+    "start": 51840,
+    "end": 52330
+  },
+  {
+    "text": "over",
+    "start": 52330,
+    "end": 52660
+  },
+  {
+    "text": "noise.",
+    "start": 52660,
+    "end": 53080
+  }
+]
